@@ -1,0 +1,374 @@
+15:06:59.055 [restartedMain] [] INFO  com.example.demo.DemoApplication..logStarting(50) - Starting DemoApplication on ziqi.local with PID 67064 (started by ziqi.zhang in /Users/ziqi.zhang/Downloads/demo 3)
+15:06:59.059 [restartedMain] [] INFO  com.example.demo.DemoApplication..logStartupProfileInfo(662) - No active profile set, falling back to default profiles: default
+15:07:01.296 [restartedMain] [] INFO  o.a.coyote.http11.Http11NioProtocol..log(180) - Initializing ProtocolHandler ["http-nio-8080"]
+15:07:01.309 [restartedMain] [] INFO  o.a.catalina.core.StandardService..log(180) - Starting service [Tomcat]
+15:07:01.309 [restartedMain] [] INFO  o.a.catalina.core.StandardEngine..log(180) - Starting Servlet Engine: Apache Tomcat/8.5.32
+15:07:01.312 [localhost-startStop-1] [] INFO  o.a.c.core.AprLifecycleListener..log(180) - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/ziqi.zhang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+15:07:01.481 [localhost-startStop-1] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]..log(180) - Initializing Spring embedded WebApplicationContext
+15:07:01.725 [restartedMain] [] INFO  com.zaxxer.hikari.HikariDataSource..getConnection(110) - mno - Starting...
+15:07:01.920 [restartedMain] [] INFO  com.zaxxer.hikari.HikariDataSource..getConnection(123) - mno - Start completed.
+15:07:01.973 [restartedMain] [] INFO  o.h.jpa.internal.util.LogHelper..logPersistenceUnitInformation(31) - HHH000204: Processing PersistenceUnitInfo [
+	name: mnoPersistenceUnit
+	...]
+15:07:02.092 [restartedMain] [] INFO  org.hibernate.Version..logVersion(45) - HHH000412: Hibernate Core {5.2.17.Final}
+15:07:02.095 [restartedMain] [] INFO  org.hibernate.cfg.Environment..<clinit>(213) - HHH000206: hibernate.properties not found
+15:07:02.140 [restartedMain] [] INFO  o.h.annotations.common.Version..<clinit>(66) - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+15:07:02.429 [restartedMain] [] INFO  org.hibernate.dialect.Dialect..<init>(157) - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+15:07:02.516 [restartedMain] [] INFO  o.h.e.b.internal.EnversServiceImpl..configure(92) - Envers integration enabled? : true
+15:07:03.866 [restartedMain] [] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration..openEntityManagerInViewInterceptor(235) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+15:07:04.757 [restartedMain] [] WARN  o.s.b.a.f.FreeMarkerAutoConfiguration..checkTemplateLocationExists(70) - Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+15:07:04.949 [restartedMain] [] INFO  o.a.coyote.http11.Http11NioProtocol..log(180) - Starting ProtocolHandler ["http-nio-8080"]
+15:07:04.975 [restartedMain] [] INFO  o.a.tomcat.util.net.NioSelectorPool..log(180) - Using a shared selector for servlet write/read
+15:07:04.995 [restartedMain] [] INFO  com.example.demo.DemoApplication..logStarted(59) - Started DemoApplication in 6.248 seconds (JVM running for 7.712)
+15:07:44.947 [http-nio-8080-exec-1] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]..log(180) - Initializing Spring FrameworkServlet 'dispatcherServlet'
+15:07:45.032 [http-nio-8080-exec-1] [] INFO  o.h.h.i.QueryTranslatorFactoryInitiator..initiateService(47) - HHH000397: Using ASTQueryTranslatorFactory
+15:07:45.466 [http-nio-8080-exec-1] [] WARN  o.h.e.jdbc.spi.SqlExceptionHelper..logExceptions(129) - SQL Error: 1146, SQLState: 42S02
+15:07:45.467 [http-nio-8080-exec-1] [] ERROR o.h.e.jdbc.spi.SqlExceptionHelper..logExceptions(131) - Table 'test.user' doesn't exist
+Query is : select user0_.id as id1_0_, user0_.create_time as create_t2_0_, user0_.name as name3_0_, user0_.update_time as update_t4_0_ from user user0_ where user0_.name='a'
+15:07:45.494 [http-nio-8080-exec-1] [] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]..log(182) - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessResourceUsageException: could not extract ResultSet; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not extract ResultSet] with root cause
+org.mariadb.jdbc.internal.util.dao.QueryException: Table 'test.user' doesn't exist
+Query is : select user0_.id as id1_0_, user0_.create_time as create_t2_0_, user0_.name as name3_0_, user0_.update_time as update_t4_0_ from user user0_ where user0_.name='a'
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.getResult(AbstractQueryProtocol.java:939)
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQueries(AbstractQueryProtocol.java:775)
+	at org.mariadb.jdbc.MariaDbClientPreparedStatement.executeInternal(MariaDbClientPreparedStatement.java:201)
+	at org.mariadb.jdbc.MariaDbClientPreparedStatement.executeQuery(MariaDbClientPreparedStatement.java:166)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:60)
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:2168)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1931)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1893)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:938)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:341)
+	at org.hibernate.loader.Loader.doList(Loader.java:2692)
+	at org.hibernate.loader.Loader.doList(Loader.java:2675)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2507)
+	at org.hibernate.loader.Loader.list(Loader.java:2502)
+	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:502)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:392)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.performList(HQLQueryPlan.java:216)
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1490)
+	at org.hibernate.query.internal.AbstractProducedQuery.doList(AbstractProducedQuery.java:1445)
+	at org.hibernate.query.internal.AbstractProducedQuery.list(AbstractProducedQuery.java:1414)
+	at org.hibernate.query.internal.AbstractProducedQuery.getSingleResult(AbstractProducedQuery.java:1463)
+	at org.hibernate.query.criteria.internal.compile.CriteriaQueryTypeQueryAdapter.getSingleResult(CriteriaQueryTypeQueryAdapter.java:107)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution$SingleEntityExecution.doExecute(JpaQueryExecution.java:214)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:91)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:136)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:125)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.doInvoke(RepositoryFactorySupport.java:590)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.invoke(RepositoryFactorySupport.java:578)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:59)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:294)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:135)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy91.findByName(Unknown Source)
+	at com.example.demo.controller.MyController.index(MyController.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:209)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:877)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:783)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:800)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1471)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+15:09:16.539 [Thread-14] [] INFO  com.zaxxer.hikari.HikariDataSource..close(381) - mno - Shutdown initiated...
+15:09:16.552 [Thread-14] [] INFO  com.zaxxer.hikari.HikariDataSource..close(383) - mno - Shutdown completed.
+15:09:27.222 [restartedMain] [] INFO  com.example.demo.DemoApplication..logStarting(50) - Starting DemoApplication on ziqi.local with PID 67601 (started by ziqi.zhang in /Users/ziqi.zhang/Downloads/demo 3)
+15:09:27.226 [restartedMain] [] INFO  com.example.demo.DemoApplication..logStartupProfileInfo(662) - No active profile set, falling back to default profiles: default
+15:09:30.637 [restartedMain] [] INFO  o.a.coyote.http11.Http11NioProtocol..log(180) - Initializing ProtocolHandler ["http-nio-8080"]
+15:09:30.657 [restartedMain] [] INFO  o.a.catalina.core.StandardService..log(180) - Starting service [Tomcat]
+15:09:30.657 [restartedMain] [] INFO  o.a.catalina.core.StandardEngine..log(180) - Starting Servlet Engine: Apache Tomcat/8.5.32
+15:09:30.666 [localhost-startStop-1] [] INFO  o.a.c.core.AprLifecycleListener..log(180) - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/ziqi.zhang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+15:09:30.830 [localhost-startStop-1] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]..log(180) - Initializing Spring embedded WebApplicationContext
+15:09:31.478 [restartedMain] [] INFO  com.zaxxer.hikari.HikariDataSource..getConnection(110) - mno - Starting...
+15:09:31.688 [restartedMain] [] INFO  com.zaxxer.hikari.HikariDataSource..getConnection(123) - mno - Start completed.
+15:09:31.765 [restartedMain] [] INFO  o.h.jpa.internal.util.LogHelper..logPersistenceUnitInformation(31) - HHH000204: Processing PersistenceUnitInfo [
+	name: mnoPersistenceUnit
+	...]
+15:09:31.928 [restartedMain] [] INFO  org.hibernate.Version..logVersion(45) - HHH000412: Hibernate Core {5.2.17.Final}
+15:09:31.931 [restartedMain] [] INFO  org.hibernate.cfg.Environment..<clinit>(213) - HHH000206: hibernate.properties not found
+15:09:31.998 [restartedMain] [] INFO  o.h.annotations.common.Version..<clinit>(66) - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+15:09:32.202 [restartedMain] [] INFO  org.hibernate.dialect.Dialect..<init>(157) - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+15:09:32.338 [restartedMain] [] INFO  o.h.e.b.internal.EnversServiceImpl..configure(92) - Envers integration enabled? : true
+15:10:29.189 [restartedMain] [] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration..openEntityManagerInViewInterceptor(235) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+15:10:30.027 [restartedMain] [] WARN  o.s.b.a.f.FreeMarkerAutoConfiguration..checkTemplateLocationExists(70) - Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+15:10:30.284 [restartedMain] [] INFO  o.a.coyote.http11.Http11NioProtocol..log(180) - Starting ProtocolHandler ["http-nio-8080"]
+15:10:30.305 [restartedMain] [] INFO  o.a.tomcat.util.net.NioSelectorPool..log(180) - Using a shared selector for servlet write/read
+15:10:30.328 [restartedMain] [] INFO  com.example.demo.DemoApplication..logStarted(59) - Started DemoApplication in 63.492 seconds (JVM running for 64.792)
+15:10:31.540 [http-nio-8080-exec-1] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]..log(180) - Initializing Spring FrameworkServlet 'dispatcherServlet'
+15:10:49.854 [http-nio-8080-exec-1] [] INFO  o.h.h.i.QueryTranslatorFactoryInitiator..initiateService(47) - HHH000397: Using ASTQueryTranslatorFactory
+15:10:50.695 [http-nio-8080-exec-1] [] WARN  o.h.e.jdbc.spi.SqlExceptionHelper..logExceptions(129) - SQL Error: 1146, SQLState: 42S02
+15:10:50.696 [http-nio-8080-exec-1] [] ERROR o.h.e.jdbc.spi.SqlExceptionHelper..logExceptions(131) - Table 'test.user' doesn't exist
+Query is : select user0_.id as id1_0_, user0_.create_time as create_t2_0_, user0_.name as name3_0_, user0_.update_time as update_t4_0_ from user user0_ where user0_.name='a'
+15:11:34.471 [mno housekeeper] [] WARN  com.zaxxer.hikari.pool.HikariPool..run(758) - mno - Thread starvation or clock leap detected (housekeeper delta=54s964ms).
+15:11:34.485 [http-nio-8080-exec-1] [] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]..log(182) - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessResourceUsageException: could not extract ResultSet; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not extract ResultSet] with root cause
+org.mariadb.jdbc.internal.util.dao.QueryException: Table 'test.user' doesn't exist
+Query is : select user0_.id as id1_0_, user0_.create_time as create_t2_0_, user0_.name as name3_0_, user0_.update_time as update_t4_0_ from user user0_ where user0_.name='a'
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.getResult(AbstractQueryProtocol.java:939)
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQueries(AbstractQueryProtocol.java:775)
+	at org.mariadb.jdbc.MariaDbClientPreparedStatement.executeInternal(MariaDbClientPreparedStatement.java:201)
+	at org.mariadb.jdbc.MariaDbClientPreparedStatement.executeQuery(MariaDbClientPreparedStatement.java:166)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:60)
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:2168)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1931)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1893)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:938)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:341)
+	at org.hibernate.loader.Loader.doList(Loader.java:2692)
+	at org.hibernate.loader.Loader.doList(Loader.java:2675)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2507)
+	at org.hibernate.loader.Loader.list(Loader.java:2502)
+	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:502)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:392)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.performList(HQLQueryPlan.java:216)
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1490)
+	at org.hibernate.query.internal.AbstractProducedQuery.doList(AbstractProducedQuery.java:1445)
+	at org.hibernate.query.internal.AbstractProducedQuery.list(AbstractProducedQuery.java:1414)
+	at org.hibernate.query.internal.AbstractProducedQuery.getSingleResult(AbstractProducedQuery.java:1463)
+	at org.hibernate.query.criteria.internal.compile.CriteriaQueryTypeQueryAdapter.getSingleResult(CriteriaQueryTypeQueryAdapter.java:107)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution$SingleEntityExecution.doExecute(JpaQueryExecution.java:214)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:91)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:136)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:125)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.doInvoke(RepositoryFactorySupport.java:590)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.invoke(RepositoryFactorySupport.java:578)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:59)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:294)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:135)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy91.findByName(Unknown Source)
+	at com.example.demo.controller.MyController.index(MyController.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:209)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:877)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:783)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:800)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1471)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+15:12:11.898 [Thread-75] [] INFO  com.zaxxer.hikari.HikariDataSource..close(381) - mno - Shutdown initiated...
+15:12:11.907 [Thread-75] [] INFO  com.zaxxer.hikari.HikariDataSource..close(383) - mno - Shutdown completed.
+15:12:20.366 [restartedMain] [] INFO  com.example.demo.DemoApplication..logStarting(50) - Starting DemoApplication on ziqi.local with PID 68229 (started by ziqi.zhang in /Users/ziqi.zhang/Downloads/demo 3)
+15:12:20.369 [restartedMain] [] INFO  com.example.demo.DemoApplication..logStartupProfileInfo(662) - No active profile set, falling back to default profiles: default
+15:12:21.994 [restartedMain] [] INFO  o.a.coyote.http11.Http11NioProtocol..log(180) - Initializing ProtocolHandler ["http-nio-8080"]
+15:12:22.007 [restartedMain] [] INFO  o.a.catalina.core.StandardService..log(180) - Starting service [Tomcat]
+15:12:22.007 [restartedMain] [] INFO  o.a.catalina.core.StandardEngine..log(180) - Starting Servlet Engine: Apache Tomcat/8.5.32
+15:12:22.010 [localhost-startStop-1] [] INFO  o.a.c.core.AprLifecycleListener..log(180) - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/ziqi.zhang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+15:12:22.152 [localhost-startStop-1] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]..log(180) - Initializing Spring embedded WebApplicationContext
+15:12:22.412 [restartedMain] [] INFO  com.zaxxer.hikari.HikariDataSource..getConnection(110) - mno - Starting...
+15:12:22.601 [restartedMain] [] INFO  com.zaxxer.hikari.HikariDataSource..getConnection(123) - mno - Start completed.
+15:12:22.657 [restartedMain] [] INFO  o.h.jpa.internal.util.LogHelper..logPersistenceUnitInformation(31) - HHH000204: Processing PersistenceUnitInfo [
+	name: mnoPersistenceUnit
+	...]
+15:12:22.792 [restartedMain] [] INFO  org.hibernate.Version..logVersion(45) - HHH000412: Hibernate Core {5.2.17.Final}
+15:12:22.794 [restartedMain] [] INFO  org.hibernate.cfg.Environment..<clinit>(213) - HHH000206: hibernate.properties not found
+15:12:22.828 [restartedMain] [] INFO  o.h.annotations.common.Version..<clinit>(66) - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+15:12:22.915 [restartedMain] [] INFO  org.hibernate.dialect.Dialect..<init>(157) - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+15:12:22.970 [restartedMain] [] INFO  o.h.e.b.internal.EnversServiceImpl..configure(92) - Envers integration enabled? : true
+15:12:24.102 [restartedMain] [] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration..openEntityManagerInViewInterceptor(235) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+15:12:24.743 [restartedMain] [] WARN  o.s.b.a.f.FreeMarkerAutoConfiguration..checkTemplateLocationExists(70) - Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+15:12:24.912 [restartedMain] [] INFO  o.a.coyote.http11.Http11NioProtocol..log(180) - Starting ProtocolHandler ["http-nio-8080"]
+15:12:24.935 [restartedMain] [] INFO  o.a.tomcat.util.net.NioSelectorPool..log(180) - Using a shared selector for servlet write/read
+15:12:24.953 [restartedMain] [] INFO  com.example.demo.DemoApplication..logStarted(59) - Started DemoApplication in 4.853 seconds (JVM running for 5.939)
+15:12:35.639 [http-nio-8080-exec-1] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]..log(180) - Initializing Spring FrameworkServlet 'dispatcherServlet'
+15:12:35.694 [http-nio-8080-exec-1] [] INFO  o.h.h.i.QueryTranslatorFactoryInitiator..initiateService(47) - HHH000397: Using ASTQueryTranslatorFactory
+15:15:23.694 [Thread-19] [] INFO  com.zaxxer.hikari.HikariDataSource..close(381) - mno - Shutdown initiated...
+15:15:23.704 [Thread-19] [] INFO  com.zaxxer.hikari.HikariDataSource..close(383) - mno - Shutdown completed.
+15:15:40.085 [restartedMain] [] INFO  com.example.demo.DemoApplication..logStarting(50) - Starting DemoApplication on ziqi.local with PID 68950 (started by ziqi.zhang in /Users/ziqi.zhang/Downloads/demo 3)
+15:15:40.088 [restartedMain] [] INFO  com.example.demo.DemoApplication..logStartupProfileInfo(662) - No active profile set, falling back to default profiles: default
+15:15:41.757 [restartedMain] [] INFO  o.a.coyote.http11.Http11NioProtocol..log(180) - Initializing ProtocolHandler ["http-nio-8080"]
+15:15:41.771 [restartedMain] [] INFO  o.a.catalina.core.StandardService..log(180) - Starting service [Tomcat]
+15:15:41.772 [restartedMain] [] INFO  o.a.catalina.core.StandardEngine..log(180) - Starting Servlet Engine: Apache Tomcat/8.5.32
+15:15:41.775 [localhost-startStop-1] [] INFO  o.a.c.core.AprLifecycleListener..log(180) - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/ziqi.zhang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+15:15:41.921 [localhost-startStop-1] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]..log(180) - Initializing Spring embedded WebApplicationContext
+15:15:42.123 [restartedMain] [] ERROR com.zaxxer.hikari.HikariConfig..setDriverClassName(508) - Failed to load driver class com.mysql.jdbc.Driver from HikariConfig class classloader sun.misc.Launcher$AppClassLoader@18b4aac2
+15:15:42.127 [restartedMain] [] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext..refresh(558) - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'repositoryConfig': Unsatisfied dependency expressed through field 'dataSource'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceDemo' defined in class path resource [com/example/demo/config/DataSourceConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'mnoDataSource' threw exception; nested exception is org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under '' to com.zaxxer.hikari.HikariDataSource
+15:15:42.129 [restartedMain] [] INFO  o.a.catalina.core.StandardService..log(180) - Stopping service [Tomcat]
+15:15:42.145 [restartedMain] [] ERROR o.s.b.d.LoggingFailureAnalysisReporter..report(42) - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under '' to com.zaxxer.hikari.HikariDataSource:
+
+    Property: driverclassname
+    Value: com.mysql.jdbc.Driver
+    Origin: "driverClassName" from property source "source"
+    Reason: Failed to load driver class com.mysql.jdbc.Driver in either of HikariConfig class loader or Thread context classloader
+
+Action:
+
+Update your application's configuration
+
+15:17:16.694 [restartedMain] [] INFO  com.example.demo.DemoApplication..logStarting(50) - Starting DemoApplication on ziqi.local with PID 69309 (started by ziqi.zhang in /Users/ziqi.zhang/Downloads/demo 3)
+15:17:16.698 [restartedMain] [] INFO  com.example.demo.DemoApplication..logStartupProfileInfo(662) - No active profile set, falling back to default profiles: default
+15:17:18.434 [restartedMain] [] INFO  o.a.coyote.http11.Http11NioProtocol..log(180) - Initializing ProtocolHandler ["http-nio-8080"]
+15:17:18.446 [restartedMain] [] INFO  o.a.catalina.core.StandardService..log(180) - Starting service [Tomcat]
+15:17:18.446 [restartedMain] [] INFO  o.a.catalina.core.StandardEngine..log(180) - Starting Servlet Engine: Apache Tomcat/8.5.32
+15:17:18.449 [localhost-startStop-1] [] INFO  o.a.c.core.AprLifecycleListener..log(180) - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/ziqi.zhang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+15:17:18.592 [localhost-startStop-1] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]..log(180) - Initializing Spring embedded WebApplicationContext
+15:17:18.896 [restartedMain] [] INFO  com.zaxxer.hikari.HikariDataSource..getConnection(110) - demo - Starting...
+15:17:19.075 [restartedMain] [] INFO  com.zaxxer.hikari.HikariDataSource..getConnection(123) - demo - Start completed.
+15:17:19.141 [restartedMain] [] INFO  o.h.jpa.internal.util.LogHelper..logPersistenceUnitInformation(31) - HHH000204: Processing PersistenceUnitInfo [
+	name: mnoPersistenceUnit
+	...]
+15:17:19.233 [restartedMain] [] INFO  org.hibernate.Version..logVersion(45) - HHH000412: Hibernate Core {5.2.17.Final}
+15:17:19.235 [restartedMain] [] INFO  org.hibernate.cfg.Environment..<clinit>(213) - HHH000206: hibernate.properties not found
+15:17:19.272 [restartedMain] [] INFO  o.h.annotations.common.Version..<clinit>(66) - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+15:17:19.389 [restartedMain] [] INFO  org.hibernate.dialect.Dialect..<init>(157) - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+15:17:19.468 [restartedMain] [] INFO  o.h.e.b.internal.EnversServiceImpl..configure(92) - Envers integration enabled? : true
+15:17:20.598 [restartedMain] [] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration..openEntityManagerInViewInterceptor(235) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+15:17:21.230 [restartedMain] [] WARN  o.s.b.a.f.FreeMarkerAutoConfiguration..checkTemplateLocationExists(70) - Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+15:17:21.430 [restartedMain] [] INFO  o.a.coyote.http11.Http11NioProtocol..log(180) - Starting ProtocolHandler ["http-nio-8080"]
+15:17:21.453 [restartedMain] [] INFO  o.a.tomcat.util.net.NioSelectorPool..log(180) - Using a shared selector for servlet write/read
+15:17:21.470 [restartedMain] [] INFO  com.example.demo.DemoApplication..logStarted(59) - Started DemoApplication in 5.139 seconds (JVM running for 6.157)
+15:17:25.845 [http-nio-8080-exec-1] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]..log(180) - Initializing Spring FrameworkServlet 'dispatcherServlet'
+15:17:25.915 [http-nio-8080-exec-1] [] INFO  o.h.h.i.QueryTranslatorFactoryInitiator..initiateService(47) - HHH000397: Using ASTQueryTranslatorFactory
+15:21:33.332 [Thread-20] [] INFO  com.zaxxer.hikari.HikariDataSource..close(381) - demo - Shutdown initiated...
+15:21:33.344 [Thread-20] [] INFO  com.zaxxer.hikari.HikariDataSource..close(383) - demo - Shutdown completed.
+15:21:40.652 [restartedMain] [] INFO  com.example.demo.DemoApplication..logStarting(50) - Starting DemoApplication on ziqi.local with PID 70262 (started by ziqi.zhang in /Users/ziqi.zhang/Downloads/demo 3)
+15:21:40.656 [restartedMain] [] INFO  com.example.demo.DemoApplication..logStartupProfileInfo(662) - No active profile set, falling back to default profiles: default
+15:21:42.554 [restartedMain] [] INFO  o.a.coyote.http11.Http11NioProtocol..log(180) - Initializing ProtocolHandler ["http-nio-8080"]
+15:21:42.566 [restartedMain] [] INFO  o.a.catalina.core.StandardService..log(180) - Starting service [Tomcat]
+15:21:42.566 [restartedMain] [] INFO  o.a.catalina.core.StandardEngine..log(180) - Starting Servlet Engine: Apache Tomcat/8.5.32
+15:21:42.569 [localhost-startStop-1] [] INFO  o.a.c.core.AprLifecycleListener..log(180) - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/ziqi.zhang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+15:21:42.673 [localhost-startStop-1] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]..log(180) - Initializing Spring embedded WebApplicationContext
+15:21:42.946 [restartedMain] [] INFO  com.zaxxer.hikari.HikariDataSource..getConnection(110) - demo - Starting...
+15:21:43.123 [restartedMain] [] INFO  com.zaxxer.hikari.HikariDataSource..getConnection(123) - demo - Start completed.
+15:21:43.181 [restartedMain] [] INFO  o.h.jpa.internal.util.LogHelper..logPersistenceUnitInformation(31) - HHH000204: Processing PersistenceUnitInfo [
+	name: demoPersistenceUnit
+	...]
+15:21:43.269 [restartedMain] [] INFO  org.hibernate.Version..logVersion(45) - HHH000412: Hibernate Core {5.2.17.Final}
+15:21:43.271 [restartedMain] [] INFO  org.hibernate.cfg.Environment..<clinit>(213) - HHH000206: hibernate.properties not found
+15:21:43.306 [restartedMain] [] INFO  o.h.annotations.common.Version..<clinit>(66) - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+15:21:43.398 [restartedMain] [] INFO  org.hibernate.dialect.Dialect..<init>(157) - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+15:21:43.451 [restartedMain] [] INFO  o.h.e.b.internal.EnversServiceImpl..configure(92) - Envers integration enabled? : true
+15:21:44.614 [restartedMain] [] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration..openEntityManagerInViewInterceptor(235) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+15:21:45.236 [restartedMain] [] WARN  o.s.b.a.f.FreeMarkerAutoConfiguration..checkTemplateLocationExists(70) - Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+15:21:45.402 [restartedMain] [] INFO  o.a.coyote.http11.Http11NioProtocol..log(180) - Starting ProtocolHandler ["http-nio-8080"]
+15:21:45.424 [restartedMain] [] INFO  o.a.tomcat.util.net.NioSelectorPool..log(180) - Using a shared selector for servlet write/read
+15:21:45.440 [restartedMain] [] INFO  com.example.demo.DemoApplication..logStarted(59) - Started DemoApplication in 5.274 seconds (JVM running for 6.567)
+15:21:59.024 [http-nio-8080-exec-1] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]..log(180) - Initializing Spring FrameworkServlet 'dispatcherServlet'
+15:21:59.084 [http-nio-8080-exec-1] [] INFO  o.h.h.i.QueryTranslatorFactoryInitiator..initiateService(47) - HHH000397: Using ASTQueryTranslatorFactory
+15:22:36.519 [Thread-17] [] INFO  com.zaxxer.hikari.HikariDataSource..close(381) - demo - Shutdown initiated...
+15:22:36.531 [Thread-17] [] INFO  com.zaxxer.hikari.HikariDataSource..close(383) - demo - Shutdown completed.

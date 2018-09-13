@@ -1,0 +1,22 @@
+
+
+
+demo.datasource:
+    name: demo
+    driver-class-name: org.mariadb.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+        pool-name: demo
+        minimum-idle: 2
+        maximum-pool-size: 10
+        connection-test-query: SELECT 1
+        idle-timeout: 21600
+        connection-timeout: 30000
+
+spring.jpa:
+    generate-ddl: false
+    show-sql: false
+    properties.hibernate:
+    current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
+    enable_lazy_load_no_trans: true
+    jdbc.time_zone: UTC
