@@ -1,6 +1,10 @@
 # SpringBoot2-hibernate-jpa-two_database
 SpringBoot2-hibernate-jpa-two_database demo
 
+这个初始化project是直接从spring官网start initializr 下载的demo包 
+https://start.spring.io/
+
+
 这仅仅是一个用Spring Boot 2.0以上版本，用jpa 和 hibernahibe ORM框架来连接两个以上数据库的一个框架demo
 (这个demo里面记得改数据库url，username，password)
 
