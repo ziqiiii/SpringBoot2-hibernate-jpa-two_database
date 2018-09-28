@@ -17,9 +17,9 @@ public class MyController {
     IUserDao iUserDao;
 
     @RequestMapping("/hi")
-    public User index(){
+    public String index(){
         User user = iUserDao.findByName("a");
         System.out.println(user);
-        return  user;
+        return  user.toString();
     }
 }

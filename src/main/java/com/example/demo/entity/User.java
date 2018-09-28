@@ -15,23 +15,18 @@ import javax.persistence.*;
 @Table(name="user")
 public class User {
 
-    @Expose(serialize = false, deserialize = false)
     @Id
     @Column(name = "id", updatable = false, unique = true, nullable = false)
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     @Column(name = "name")
     @SerializedName("a_name")
     private String name;
 
-
-    @Expose(serialize = false, deserialize = false)
     @Column(name = "update_time")
     @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime")
     private DateTime updateTime;
 
-    @Expose(serialize = false, deserialize = false)
     @Column(name = "create_time")
     @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime")
     private DateTime createTime;
